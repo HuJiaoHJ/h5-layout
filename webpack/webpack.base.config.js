@@ -57,7 +57,7 @@ const base = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style-loader!css-loader!postcss-loader!scss-loader',
+                loader: 'style-loader!css-loader!postcss-loader!sass-loader',
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
@@ -72,6 +72,11 @@ const base = {
             },
         }),
     ].concat(html),
+    resolve: {
+        alias: {
+            common: path.resolve(__dirname, '../src/common'),
+        }
+    },
 };
 
 module.exports = base;

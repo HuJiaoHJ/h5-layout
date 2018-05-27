@@ -1,0 +1,19 @@
+<script>
+(function () {
+    // 1px
+    var dpr = window.devicePixelRatio;
+    var scale = 1 / dpr;
+
+    var metaEl = document.createElement('meta');
+    metaEl.setAttribute('name', 'viewport');
+    metaEl.setAttribute('content', 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+
+    if (document.documentElement.firstElementChild) {
+        document.documentElement.firstElementChild.appendChild(metaEl);
+    } else {
+        var wrap = document.createElement('div');
+        wrap.appendChild(metaEl);
+        document.write(wrap.innerHTML);
+    }
+})();
+</script>

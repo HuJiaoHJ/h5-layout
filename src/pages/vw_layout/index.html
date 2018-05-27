@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        init
-        <script src="./index.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>移动端适配：vw + rem</title>
+    <%- include src/common/tpl/head.html -%>
+</head>
+
+<body>
+    <div id="page">
+        <div id="hd">
+            <%- include src/pages/vw_layout/tpl/head.html -%>
+        </div>
+        <div id="bd">
+            <%- include src/pages/vw_layout/tpl/body.html -%>
+        </div>
+        <div id="ft">
+            <%- include src/pages/vw_layout/tpl/foot.html -%>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
 </html>

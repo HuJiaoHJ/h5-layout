@@ -1,0 +1,25 @@
+@import 'reset';
+@import 'iconfont';
+
+html,
+body {
+    background-color: #fff;
+    height: 100%;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+    font-size: 10vw;
+}
+
+body {
+    font-size: 24px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

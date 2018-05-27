@@ -1,0 +1,18 @@
+@import 'common/style/base.scss';
+@import 'common/style/layout.scss';
+
+$gray: rgba(22, 24, 35, 0.2);
+$red: #fe2c55;;
+$red_dep: rgba(254, 44, 85, 0.6);
+
+.head {
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    border-bottom: 1px solid $gray;
+}
+.foot {
+    height: 100px;
+    background-color: $red;
+    border-top: 1px solid $gray;
+}
