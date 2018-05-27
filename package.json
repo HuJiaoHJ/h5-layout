@@ -6,7 +6,8 @@
   "scripts": {
     "cleanup": "rm -rf build",
     "build": "npm run cleanup && NODE_ENV=production webpack",
-    "dev": "NODE_ENV=development webpack-dev-server"
+    "dev": "NODE_ENV=development webpack-dev-server",
+    "precommit": "npm run build; git add .;"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "file-loader": "^1.1.11",
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
     "node-sass": "^4.9.0",
     "postcss-loader": "^2.1.5",
     "postcss-pxtorem": "^4.0.1",
