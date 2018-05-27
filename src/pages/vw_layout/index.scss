@@ -6,13 +6,13 @@ $red: #fe2c55;
     height: 100px;
     background-color: #000;
     color: #fff;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1PX solid $gray;
 }
 
 .foot {
     height: 100px;
     background-color: $red;
-    border-top: 1px solid $gray;
+    border-top: 1PX solid $gray;
 }
 
 .body {
@@ -24,9 +24,10 @@ $red: #fe2c55;
     .l-flex-center {
         display: flex;
         align-items: center;
-    } // 1px
+    } 
+    // 1px
     .l-border-bottom {
-        border-bottom: 1px solid $gray;
+        border-bottom: 1PX solid $gray;
     }
     .btn {
         width: 217px;
@@ -40,7 +41,7 @@ $red: #fe2c55;
     }
     .l-btn {
         background-color: #fff;
-        border: 1px solid $gray;
+        border: 1PX solid $gray;
         border-radius: 14px;
         &.active {
             border-color: $red;
