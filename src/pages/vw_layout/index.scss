@@ -1,18 +1,122 @@
 @import 'common/style/base.scss';
 @import 'common/style/layout.scss';
-
 $gray: rgba(22, 24, 35, 0.2);
-$red: #fe2c55;;
-$red_dep: rgba(254, 44, 85, 0.6);
-
+$red: #fe2c55;
 .head {
     height: 100px;
     background-color: #000;
     color: #fff;
     border-bottom: 1px solid $gray;
 }
+
 .foot {
     height: 100px;
     background-color: $red;
     border-top: 1px solid $gray;
+}
+
+.body {
+    padding: 20px 0;
+    .l-flex {
+        display: flex;
+        justify-content: space-around;
+    }
+    .l-flex-center {
+        display: flex;
+        align-items: center;
+    } // 1px
+    .l-border-bottom {
+        border-bottom: 1px solid $gray;
+    }
+    .btn {
+        width: 217px;
+        height: 76px;
+        font-size: 32px;
+        font-weight: bold;
+        color: $red;
+        .prefix {
+            font-size: 22px;
+        }
+    }
+    .l-btn {
+        background-color: #fff;
+        border: 1px solid $gray;
+        border-radius: 14px;
+        &.active {
+            border-color: $red;
+        }
+    }
+    .l-line {
+        padding-top: 20px;
+        @extend .l-border-bottom;
+    }
+    .l-box-1 {
+        height: 92px;
+        font-size: 32px;
+        padding: 0 20px;
+        @extend .l-flex-center;
+        @extend .l-border-bottom;
+        .icon {
+            color: $red;
+            font-size: 24px;
+            margin-left: 8px;
+        }
+    }
+    .l-box-2 {
+        height: 34px;
+        font-size: 24px;
+        padding: 0 20px;
+        @extend .l-flex-center;
+        @extend .l-border-bottom;
+        .icon {
+            color: $red;
+            font-size: 24px;
+            margin-right: 8px;
+        }
+    }
+    .l-box-3 {
+        height: 152px;
+        font-size: 28px;
+        padding: 0 20px;
+        @extend .l-flex-center;
+        @extend .l-border-bottom;
+        .icon {
+            color: $red;
+            &-left {
+                font-size: 54px;
+                margin: auto 20px;
+            }
+            &-right {
+                font-size: 24px;
+            }
+        }
+        .content {
+            .big {
+                font-size: 28px;
+                line-height: 40px;
+            }
+            .small {
+                font-size: 24px;
+                line-height: 34px;
+            }
+        }
+        .right {
+            flex-grow: 1;
+            text-align: right;
+            padding-right: 20px;
+        }
+    }
+    .l-box-4 {
+        height: 152px;
+        font-size: 28px;
+        padding: 0 20px;
+        @extend .l-flex-center;
+        justify-content: center;
+        @extend .l-border-bottom;
+        .icon {
+            color: $red;
+            font-size: 54px;
+            margin-right: 20px;
+        }
+    }
 }
