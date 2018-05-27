@@ -26,7 +26,9 @@ chunks.forEach(name => {
         filename: `${name}.html`,
         template: `ejs-compiled-loader!./src/${name}.html`,
         inject: false,
-        minify: false,
+        minify: {
+            minifyJS: true,
+        },
         chunks: [name],
     };
     html.push(new HtmlWebpackPlugin(config));
