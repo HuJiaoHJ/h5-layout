@@ -1,0 +1,7 @@
+@function rem($px) {
+    @return ($px / (($vw_design / 100) * $font_size)) * 1rem;
+}
+
+html {
+    font-size: $font_size * 1vw;
+}

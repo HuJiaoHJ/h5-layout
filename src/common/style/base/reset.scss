@@ -1,8 +1,28 @@
+/*修复现代浏览器显示问题*/
+@import './normalize.scss';
+
+html,
+body {
+    background-color: #fff;
+    height: 100%;
+}
+
 html {
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
+        STHeiTi, sans-serif;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 h1,
@@ -34,6 +54,7 @@ li {
 
 a {
     color: inherit;
+    text-decoration: none;
 }
 
 i,
@@ -42,7 +63,6 @@ em {
 }
 
 /* https://github.com/ftlabs/fastclick/issues/60 */
-
 label>* {
     pointer-events: none;
 }
