@@ -73,16 +73,12 @@
             options = initOptions || {};
             // IE8以下 或者 支持vw的机型，不做兼容处理
             // 暴露 options.force 字段，支持设置为true，强制做兼容处理
-            console.log(isOldIE, options.force, isMobileSafari, isBuggyIE, isBadStockAndroid, isOperaMini);
             if (isOldIE || (!options.force && !isBuggyIE && !isOperaMini && !isMobileSafari && !isBadStockAndroid)) {
                 if (window.console && isOldIE) {
                     console.info('viewport-units-buggyfill requires a proper CSSOM and basic viewport unit support, which are not available in IE8 and below');
                 }
-                console.log('不需要兼容');
                 return;
             }
-
-            console.log('需要兼容');
 
             initialized = true;
             styleNode = document.createElement('style');

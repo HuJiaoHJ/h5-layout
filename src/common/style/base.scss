@@ -1,7 +1,10 @@
-@import './base/variable.scss';
 @import './base/reset.scss';
+@import './base/icons.scss';
+
+@import './base/variable.scss';
 @import './base/px2rem.scss';
 
-@import './icons/icons.scss';
+@import './common/mixin.scss';
+@import './common/z-index.scss';
 
 @import './layout/index.scss';

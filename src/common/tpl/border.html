@@ -2,11 +2,26 @@
 (function () {
     // 1px
     var dpr = window.devicePixelRatio;
+    var isIPhone = window.navigator.appVersion.match(/iphone/gi);
+    var UA = window.navigator.userAgent;
+    var hacks = ['m1 note']; // 对 meizu 某型号进行hack，主要原因是 dpr为3，但是手机屏幕分辨率不够，会出现 1px border 过细的问题，这种问题主要出现在部分魅族手机上
+
+    var flag = false;
+    hacks.forEach(function (item) {
+        if (UA.indexOf(item) >= 0) {
+            flag = true;
+            return;
+        }
+    });
+
+    if (!isIPhone && flag) {
+        dpr = dpr >= 2 ? 2 : dpr;
+    }
     var scale = 1 / dpr;
 
     var metaEl = document.createElement('meta');
     metaEl.setAttribute('name', 'viewport');
-    metaEl.setAttribute('content', 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    metaEl.setAttribute('content', 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no, viewport-fit=cover');
 
     if (document.documentElement.firstElementChild) {
         document.documentElement.firstElementChild.appendChild(metaEl);

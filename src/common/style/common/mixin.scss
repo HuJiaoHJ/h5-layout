@@ -1,0 +1,50 @@
+// 清除浮动
+@mixin clrfix() {
+    zoom:1;
+    &:after {
+        clear:both; display:block; height:0; visibility:hidden; content:".";
+        font-size: 0;
+    }
+}
+
+@mixin line-clamp(
+    $line,
+    $line-height:default) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+
+    @if $line-height != default {
+        line-height: $line-height; // 相对单位
+        max-height: $line-height * $line * 1em;
+    }
+};
+
+// iphonex适配
+@mixin adapterIphoneXTop($p: 'padding-top', $val: 0) {
+    #{$p}: rem($val);
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio:3) {
+        #{$p}: rem($val + 44);
+    }
+}
+
+@mixin adapterIphoneXBottom($p: 'padding-bottom', $val: 0) {
+    #{$p}: rem($val);
+    @media only screen and (device-width: 375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
+        #{$p}: rem($val + 34);
+    }
+}
+// 设置 placeholder 样式
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+    &::-moz-placeholder {
+        @content
+    }
+    &:-ms-input-placeholder {
+        @content
+    }
+}
