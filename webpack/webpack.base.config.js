@@ -1,7 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const glob = require('glob');
+
+const devMode = process.env.NODE_ENV !== 'production';
 
 let entryPath = `./src/pages/**/index.js`;
 
@@ -25,7 +28,7 @@ chunks.forEach(name => {
         data: {},
         filename: `${name}.html`,
         template: `ejs-compiled-loader!./src/${name}.html`,
-        inject: false,
+        inject: true,
         minify: {
             minifyJS: true,
         },
@@ -38,7 +41,7 @@ const base = {
     entry: js,
     output: {
         path: path.resolve(__dirname, '../build'),
-        filename: '[name].js',
+        filename: devMode ? '[name].js': '[name][chunkhash:8].js',
     },
     module: {
         rules: [
@@ -55,11 +58,13 @@ const base = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader!postcss-loader',
+                // loader: 'style-loader!css-loader!postcss-loader',
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
             },
             {
                 test: /\.scss$/,
-                loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+                // loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
@@ -73,7 +78,11 @@ const base = {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
             },
         }),
-    ].concat(html),
+    ].concat(html).concat([
+        new MiniCssExtractPlugin({
+            filename: devMode ? '[name].css' : '[name][chunkhash:8].css',
+        }),
+    ]),
     resolve: {
         alias: {
             common: path.resolve(__dirname, '../src/common'),
