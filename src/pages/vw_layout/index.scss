@@ -1,22 +1,22 @@
 @import 'common/style/base.scss';
 
 #page {
-    font-size: rem(32);
+    font-size: 32px;
 }
 .l-flex-certer-middle {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-// 1px
+// 1PX
 .l-border-bottom {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1PX solid $gray;
 }
 .head {
     // iphonex 适配
     @include adapterIphoneXTop();
     box-sizing: content-box;
-    height: rem(100);
+    height: 100px;
     background-color: #000;
     color: #fff;
     @extend .l-flex-certer-middle;
@@ -26,37 +26,37 @@
     // iphonex 适配
     @include adapterIphoneXBottom();
     box-sizing: content-box;
-    height: rem(100);
+    height: 100px;
     background-color: $red;
-    border-top: 1px solid $gray;
+    border-top: 1PX solid $gray;
     @extend .l-flex-certer-middle;
 }
 .body {
-    padding-top: rem(20);
+    padding-top: 20px;
     .l-box {
         display: flex;
         justify-content: space-around;
     }
     .btn {
-        width: rem(217);
-        height: rem(76);
-        font-size: rem(32);
+        width: 217px;
+        height: 76px;
+        font-size: 32px;
         font-weight: bold;
         color: $red;
         .prefix {
-            font-size: rem(22);
+            font-size: 22px;
         }
     }
     .l-btn {
         background-color: #fff;
-        border: 1px solid $gray;
+        border: 1PX solid $gray;
         border-radius: 14px;
         &.active {
             border-color: $red;
         }
     }
     .l-line {
-        padding-top: rem(20);
+        padding-top: 20px;
         @extend .l-border-bottom;
     }
 
@@ -65,84 +65,84 @@
         align-items: center;
     }
     .l-box-1 {
-        height: rem(92);
-        font-size: rem(32);
+        height: 92px;
+        font-size: 32px;
         line-height: 1;
-        padding: 0 rem(20);
+        padding: 0 20px;
         @extend .l-flex-center;
         @extend .l-border-bottom;
         .icon-span {
-            font-size: rem(24);
+            font-size: 24px;
             line-height: 1;
             .icons {
                 color: $red;
-                margin-left: rem(8);
+                margin-left: 8px;
             }
         }
     }
     .l-box-2 {
-        height: rem(60);
-        font-size: rem(24);
+        height: 60px;
+        font-size: 24px;
         line-height: 1;
-        padding: 0 rem(20);
+        padding: 0 20px;
         @extend .l-flex-center;
         @extend .l-border-bottom;
         .icon-span {
-            font-size: rem(24);
+            font-size: 24px;
             line-height: 1;
             .icons {
                 color: $red;
-                margin-right: rem(8);
+                margin-right: 8px;
             }
         }
     }
     .l-box-3 {
-        height: rem(152);
-        font-size: rem(28);
-        padding: 0 rem(20);
+        height: 152px;
+        font-size: 28px;
+        padding: 0 20px;
         @extend .l-flex-center;
         @extend .l-border-bottom;
         .icons {
             color: $red;
             &-left {
-                font-size: rem(54);
-                margin: auto rem(20);
+                font-size: 54px;
+                margin: auto 20px;
             }
             &-right {
-                font-size: rem(24);
+                font-size: 24px;
             }
         }
         .content {
             .big {
-                font-size: rem(28);
-                line-height: rem(40);
+                font-size: 28px;
+                line-height: 40px;
             }
             .small {
-                font-size: rem(24);
-                line-height: rem(34);
+                font-size: 24px;
+                line-height: 34px;
             }
         }
         .right {   
             flex-grow: 1;
             text-align: right;
-            padding-right: rem(20);
+            padding-right: 20px;
         }
     }
     .l-box-4 {
-        height: rem(152);
-        font-size: rem(28);
-        padding: 0 rem(20);
+        height: 152px;
+        font-size: 28px;
+        padding: 0 20px;
         @extend .l-flex-certer-middle;
         @extend .l-border-bottom;
         .icons {
             color: $red;
-            font-size: rem(54);
-            margin-right: rem(20);
+            font-size: 54px;
+            margin-right: 20px;
         }
     }
     .l-box-5 {
-        height: rem(80);
-        font-size: rem(32);
+        height: 80px;
+        font-size: 32px;
         @extend .l-border-bottom;
         @extend .l-flex-center;
         .font{
