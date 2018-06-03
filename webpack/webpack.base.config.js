@@ -42,6 +42,7 @@ const base = {
     output: {
         path: path.resolve(__dirname, '../build'),
         filename: devMode ? '[name].js': '[name][chunkhash:8].js',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -68,8 +69,8 @@ const base = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: 'file-loader?name=[hash:8].[ext]',
-            }
+                loader: 'file-loader?name=[hash:8].[ext]'
+            },
         ]
     },
     plugins: [
