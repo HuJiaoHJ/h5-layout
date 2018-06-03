@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const prod = {
     mode: 'production',
     output: {
-        // publicPath: '/build',
+        publicPath: '../../',
     },
     plugins: [
         new UglifyJsPlugin(),
