@@ -24,16 +24,16 @@
 
 // iphonex适配
 @mixin adapterIphoneXTop($p: 'padding-top', $val: 0) {
-    #{$p}: rem($val);
+    #{$p}:  ($val) + px;
     @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio:3) {
-        #{$p}: rem($val + 44);
+        #{$p}: ($val + 44) + px;
     }
 }
 
 @mixin adapterIphoneXBottom($p: 'padding-bottom', $val: 0) {
-    #{$p}: rem($val);
+    #{$p}: ($val) + px;
     @media only screen and (device-width: 375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
-        #{$p}: rem($val + 34);
+        #{$p}: ($val + 34) + px;
     }
 }
 // 设置 placeholder 样式
