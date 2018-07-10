@@ -1,0 +1,7 @@
+# Browsers that we support
+
+last 4 versions
+>1%
+Firefox ESR
+iOS 8
+not ie < 9
