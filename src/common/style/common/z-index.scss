@@ -7,7 +7,7 @@ $z-layers: (
     'fixed': 990,
     'mask': 1000,
     'modal': 1020,
-    'tips': 1040
+    'toast': 1040
 );
 @function map-has-nested-keys($map, $keys...) {
     @each $key in $keys {

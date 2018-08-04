@@ -1,4 +1,3 @@
-<script>
 (function () {
     (function (root, factory) {
         'use strict';
@@ -7,7 +6,7 @@
         } else if (typeof exports === 'object') {
             module.exports = factory();
         } else {
-            root.viewportUnitsBuggyfill = factory();
+            root.viewportUnitsPolyfill = factory();
         }
     }(this, function () {
         'use strict';
@@ -127,4 +126,6 @@
         };
     }));
 })();
-</script>
+
+// 看一下直接执行是不是 ok
+window.viewportUnitsPolyfill.init();
